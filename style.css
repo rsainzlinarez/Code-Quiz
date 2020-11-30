@@ -1,0 +1,35 @@
+/* Modifies intitial window screen */
+#startWindow{
+    width: 500px;
+    height: 300px;
+   
+    margin: auto;
+    position: relative;
+    margin-top: 10%;
+    
+}
+
+/* Modifies title */
+#title{
+
+   margin: auto;
+    width: 10em;
+}
+
+/*Modifies instructions paragraph */
+#instruction {
+margin: auto;
+
+}
+
+/* Modifies start button */
+#startButton{
+background-color:blue;
+color: white;
+position: relative;
+margin: auto;
+height: 3em;
+width: 10em;
+margin-left: 33%;
+
+}
