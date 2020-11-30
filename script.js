@@ -27,10 +27,29 @@ answer: 'console.log',
      
 ];
 
+ 
+var i = 0;
+var questionsSection = document.querySelector('startWindow');
+var timerEl = document.querySelector('#timer');
+var startButtonEl = document.querySelector('#startButton');
+var scoreRecordedEl = document.querySelector('#scoresLink');
 
 
-  
-  
- 
- 
+startButtonEl.addEventListener('click', function () {
+    var timeLeft = 2;
+    var timeInterval = setInterval(function() {
+        timerEl.textContent = timeLeft + " seconds remaining";
+        timeLeft--;
+    
+        if (timeLeft === -1) {
+            clearInterval(timeInterval);
+            
+        }
+    
+      }, 1000);
+    
+
+    });
+
+    
 
