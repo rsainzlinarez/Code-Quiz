@@ -13,12 +13,16 @@
 #title{
 
    margin: auto;
-    width: 10em;
+    width: 15em;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 /*Modifies instructions paragraph */
-#instruction {
+#instructions {
 margin: auto;
+text-align: center;
+padding-bottom: 20px;
 
 }
 
@@ -29,8 +33,9 @@ color: white;
 position: relative;
 margin: auto;
 height: 3em;
-width: 10em;
+width: 15em;
 margin-left: 33%;
+text-align: center;
 
 }
 /* Modifies start button */
@@ -45,13 +50,13 @@ margin-left: 85%;
     }
 
 .answerButton{
-/* display: none; */
+display: none;
 background-color:rgb(13, 65, 236);
 color: white;
 position: relative;
 margin: auto;
 height: 3em;
-width: 10em;
+width: 15em;
 margin-left: 33%;
 
 }
