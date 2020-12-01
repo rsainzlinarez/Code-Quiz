@@ -9,11 +9,9 @@
 <body>
     <head id = "headSection">
 
-        <a id = "scoresLink"></a>
+        <a id = "scoresLink" href = "#">View Scores</a>
 
-        <section id = "timer">
-
-        </section>
+        <section id = "timer">Time:</section>
 
     </head>
 
@@ -23,8 +21,18 @@
         <p id = "instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect questions will penalize your score/time by ten seconds!</p>
 
         <button id = "startButton" >Start Quiz</button>
+        <section class = "answerButtons">
+            <button class = "answerButton choiceA"></button>
+            <button class = "answerButton choiceB" ></button>
+            <button class = "answerButton choiceC"></button>
+            <button class = "answerButton choiceD"></button>
+    
+        </section>
+
     </main>
 
+   
     
+    <script src="./script.js"></script>
 </body>
 </html>
