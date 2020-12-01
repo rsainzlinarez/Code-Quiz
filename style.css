@@ -24,7 +24,7 @@ margin: auto;
 
 /* Modifies start button */
 #startButton{
-background-color:blue;
+background-color:rgb(13, 65, 236);
 color: white;
 position: relative;
 margin: auto;
@@ -33,3 +33,26 @@ width: 10em;
 margin-left: 33%;
 
 }
+/* Modifies start button */
+#timer{
+display: inline;
+position: absolute;
+margin-left: 85%;
+}
+
+.choiceA{
+    background-color: red;
+    }
+
+.answerButton{
+/* display: none; */
+background-color:rgb(13, 65, 236);
+color: white;
+position: relative;
+margin: auto;
+height: 3em;
+width: 10em;
+margin-left: 33%;
+
+}
+
