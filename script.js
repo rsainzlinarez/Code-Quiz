@@ -65,6 +65,19 @@ startButtonEl.addEventListener('click', function () {
     
 
     });
+// When start button is clicked, start button disappear and choice answers appear
+    startButtonEl.addEventListener('click', function(){
+       
+        startButtonEl.style.display = 'none';
+
+        answerButtonA.style.display = 'block'; 
+        answerButtonB.style.display = 'block'; 
+        answerButtonC.style.display = 'block'; 
+        answerButtonD.style.display = 'block'; 
+
+
+});
+
 // First questions appears when counter is clicked
     startButtonEl.addEventListener('click', function(){
        
@@ -74,12 +87,7 @@ startButtonEl.addEventListener('click', function () {
             answerButtonB.innerHTML= (questionsList[0].choices[1]);
             answerButtonC.innerHTML= (questionsList[0].choices[1]);
             answerButtonD.innerHTML= (questionsList[0].choices[1]);
-         
-            
-            instructionsEl.innerHTML = "";
-        
-    // titleEl.innerHTML ="hello";
-
    
     });
+    
 
