@@ -35,10 +35,11 @@ var startButtonEl = document.querySelector('#startButton');
 var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
-var answerButtonA= document.querySelector(".choiceA");
-var answerButtonB = document.querySelector('.choiceB');
-var answerButtonC = document.querySelector('.choiceC');
-var answerButtonD = document.querySelector('.choiceD');
+var answerButtonEl= document.querySelector(".answerButton");
+var answerButtonSDivEl= document.querySelector(".answerButtonsDiv");
+var answerButtonEl = document.querySelector('.answerButton');
+var answerButtonEl = document.querySelector('.answerButton');
+var answerButtonEl = document.querySelector('.answerButton');
 
 
 var timer = 60;
@@ -72,10 +73,8 @@ startButtonEl.addEventListener('click', function () {
         instructionsEl.style.display = 'none';
 
         // Buttos that contain the answer choices appear
-        answerButtonA.style.display = 'block'; 
-        answerButtonB.style.display = 'block'; 
-        answerButtonC.style.display = 'block'; 
-        answerButtonD.style.display = 'block'; 
+        answerButtonSDivEl.style.display = 'block'; 
+        
 
         ;
 
@@ -94,52 +93,3 @@ startButtonEl.addEventListener('click', function(){
    
    
 });
-// Second question appears
-answerButtonC.addEventListener('click', function(){
-    titleEl.innerHTML= (questionsList[1].title);
-
-    answerButtonA.innerHTML = (questionsList[1].choices[0]);
-    answerButtonB.innerHTML = (questionsList[1].choices[1]);
-    answerButtonC.innerHTML = (questionsList[1].choices[2]);
-    answerButtonD.innerHTML = (questionsList[1].choices[3]);
-
-   
-   
-});
-answerButtonD.addEventListener('click', function(){
-    titleEl.innerHTML= (questionsList[2].title);
-
-    answerButtonA.innerHTML = (questionsList[2].choices[0]);
-    answerButtonB.innerHTML = (questionsList[2].choices[1]);
-    answerButtonC.innerHTML = (questionsList[2].choices[2]);
-    answerButtonD.innerHTML = (questionsList[2].choices[3]);
-
-   
-   
-});
-
-answerButtonA.addEventListener('click', function(){
-    titleEl.innerHTML= (questionsList[3].title);
-
-    answerButtonA.innerHTML = (questionsList[3].choices[0]);
-    answerButtonB.innerHTML = (questionsList[3].choices[1]);
-    answerButtonC.innerHTML = (questionsList[3].choices[2]);
-    answerButtonD.innerHTML = (questionsList[3].choices[3]);
-
-   
-   
-});
-answerButtonB.addEventListener('click', function(){
-    titleEl.innerHTML= (questionsList[4].title);
-
-    answerButtonA.innerHTML = (questionsList[4].choices[0]);
-    answerButtonB.innerHTML = (questionsList[4].choices[1]);
-    answerButtonC.innerHTML = (questionsList[4].choices[2]);
-    answerButtonD.innerHTML = (questionsList[4].choices[3]);
-
-   
-   
-});
-
-
-
