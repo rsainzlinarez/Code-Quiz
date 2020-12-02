@@ -50,7 +50,6 @@ margin-left: 85%;
     }
 
 .answerButton{
-display: none;
 background-color:rgb(13, 65, 236);
 color: white;
 position: relative;
@@ -60,4 +59,10 @@ width: 15em;
 margin-left: 33%;
 
 }
+.answerButtonsDiv{
+    display: none;
+   
+
+}
+
 
