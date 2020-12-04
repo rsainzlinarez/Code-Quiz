@@ -1,26 +1,26 @@
 var questionsList = [
     {
-title: "Commonuly used data types DO NOT include:",
+question: "Commonuly used data types DO NOT include:",
 choices: ['strings', 'booleans', 'alerts', 'numbers'],
 correctAnswer: 'alerts',
     },
        {
-title: "The condition in an if/ese is enclosed within__________.",
+question: "The condition in an if/ese is enclosed within__________.",
 choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
 correctAnswer: 'curly brackets',
     },
        {
-title: "Arrays in JavaScript can be used to store __________.",
+question: "Arrays in JavaScript can be used to store __________.",
 choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
 correctAnswer: 'all of the above',
     },
        {
-title: "String values must be recorded within __________when being assigned to variables.",
+question: "String values must be recorded within __________when being assigned to variables.",
 choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
 correctAnswer: 'quotes',
     },
        {
-title: "A very useful tool during development and debugging for printing content to the debugger is:",
+question: "A very useful tool during development and debugging for printing content to the debugger is:",
 choices: ['JavaScript', 'terminal/bash', 'for loops', 'console.log'],
 correctAnswer: 'console.log',
     },
@@ -37,13 +37,17 @@ var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 
 var answerButtonSDivEl= document.querySelector(".answerButtonsDiv");
-var answerButtons = document.querySelector('.answerButton');
-// 
+var answerButton= document.querySelector('.choiceA');
+
+
 
 
 var timer = 60;
 var score = 0;
-var currentQuestionIndex = 0;
+var currentQuestion = '';
+var questionIndex = 0;
+
+
 
 
 // Counter starts when start button is clicked
@@ -75,22 +79,31 @@ startButtonEl.addEventListener('click', function () {
 
         // Buttos that contain the answer choices appear
         answerButtonSDivEl.style.display = 'block'; 
-             
-});
+        
 
+    
+    });
 
+    function generateQuestion(){
+            let currentQuestion = questionsList[questionIndex];
+            console.log(currentQuestion);
+           
+            // TitleEl.textContent = currentQuestion.title;
+            // document.getElementById('answerButton').innerHTML ='';
 
-// }
-// First Questions appears
-startButtonEl.addEventListener('click', function(){
-    titleEl.innerHTML= (questionsList[0].title);
-
-    answerButtonEl.innerHTML= (questionsList[0].choices[0]);
-    answerButtonEl.innerHTML= (questionsList[0].choices[1]);
-    answerButtonEl.innerHTML= (questionsList[0].choices[2]);
-    answerButtonEl.innerHTML= (questionsList[0].choices[3]);
-
-   
-   
-});
-
+            // currentQuestion.choices.forEach(function(choices) {
+            // console.log(choices);
+            // let node = document.createElement('button');
+            // let textnode = document.createTextNode(choices);
+            // node.appendChild(textnode);
+            // let answerButton = document.getElementById('choices').appendChild(node);
+            // answerButton.setAttribute('value', choices);
+            
+            
+            // node.addEventListener('click', function(event) {
+            // validateAnswer(event);
+            // });
+            // });
+            
+            }
+            generateQuestion()
