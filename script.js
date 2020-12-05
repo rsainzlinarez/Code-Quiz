@@ -27,7 +27,8 @@ correctAnswer: 'console.log',
      
 ];
 
- //List of all variables required from index.html file
+
+ //======List of all variables required from index.html file========//
 var i = 0;
 var questionsSection = document.querySelector('#startWindow');
 var timerEl = document.querySelector('#timer');
@@ -36,21 +37,19 @@ var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 
-var answerButtonSDivEl= document.querySelector(".answerButtonsDiv");
-var answerButton= document.querySelector('.choiceA');
+// var answerButtonSDivEl= document.querySelector(".answerButtonsDiv");
+// var answerButton= document.querySelector('.choiceA');
+// var answersDivEl = document.querySelector('.answersDiv');
 
-
-
-
+    
+// ========================List of Global Variables==================//
 var timer = 60;
 var score = 0;
 var currentQuestion = '';
 var questionIndex = 0;
 
 
-
-
-// Counter starts when start button is clicked
+//============== Counter starts when start button is clicked===============//
 startButtonEl.addEventListener('click', function () {
     var questionAsked = true;
     var timeInterval = setInterval(function() {
@@ -65,9 +64,8 @@ startButtonEl.addEventListener('click', function () {
     // nextQuestion();
 
     });
-
-
-// Removes quiz title, instructions and start quiz
+    
+// -----Removes quiz title, instructions and start quiz-------------------//
       startButtonEl.addEventListener('click', function(){
         // titleEl.style.display = 'none';
         // Startbutton disappears
@@ -78,32 +76,33 @@ startButtonEl.addEventListener('click', function () {
       
 
         // Buttos that contain the answer choices appear
-        answerButtonSDivEl.style.display = 'block'; 
-        
+        // answerButtonSDivEl.style.display = 'block'; 
+ // ----------------------------------------------------------------------//
 
-    
-    });
 
     function generateQuestion(){
             let currentQuestion = questionsList[questionIndex];
-            console.log(currentQuestion);
-           
-            // TitleEl.textContent = currentQuestion.title;
-            // document.getElementById('answerButton').innerHTML ='';
+            
+            titleEl.textContent = currentQuestion.question;
+            
+            document.getElementById('choices').innerHTML = '';
 
-            // currentQuestion.choices.forEach(function(choices) {
-            // console.log(choices);
-            // let node = document.createElement('button');
-            // let textnode = document.createTextNode(choices);
-            // node.appendChild(textnode);
-            // let answerButton = document.getElementById('choices').appendChild(node);
-            // answerButton.setAttribute('value', choices);
+            currentQuestion.choices.forEach(function(options) {
+            console.log(options);
+            let node = document.createElement('button');
+            let textnode = document.createTextNode(choices);
+            node.appendChild(textnode);
+            let answerButton = document.getElementById('choices').appendChild(node);
+            answerButton.setAttribute('value', options);
             
             
-            // node.addEventListener('click', function(event) {
-            // validateAnswer(event);
-            // });
-            // });
+            node.addEventListener('click', function(event) {
+            validateAnswer(event);
+            });
+            });
             
             }
             generateQuestion()
+
+        });
+          
