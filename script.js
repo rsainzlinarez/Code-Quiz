@@ -37,9 +37,7 @@ var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 
-// var answerButtonSDivEl= document.querySelector(".answerButtonsDiv");
-// var answerButton= document.querySelector('.choiceA');
-// var answersDivEl = document.querySelector('.answersDiv');
+
 
     
 // ========================List of Global Variables==================//
@@ -47,6 +45,7 @@ var timer = 60;
 var score = 0;
 var currentQuestion = '';
 var questionIndex = 0;
+
 
 
 //============== Counter starts when start button is clicked===============//
@@ -79,9 +78,9 @@ startButtonEl.addEventListener('click', function () {
         // answerButtonSDivEl.style.display = 'block'; 
  // ----------------------------------------------------------------------//
 
-
+// ==================Generates questioins and answer choices==============//
     function generateQuestion(){
-            let currentQuestion = questionsList[questionIndex];
+            var currentQuestion = questionsList[questionIndex];
             
             titleEl.textContent = currentQuestion.question;
             
@@ -89,10 +88,10 @@ startButtonEl.addEventListener('click', function () {
 
             currentQuestion.choices.forEach(function(options) {
             console.log(options);
-            let node = document.createElement('button');
-            let textnode = document.createTextNode(choices);
+            var node = document.createElement('button');
+            var textnode = document.createTextNode(options);
             node.appendChild(textnode);
-            let answerButton = document.getElementById('choices').appendChild(node);
+            var answerButton = document.getElementById('choices').appendChild(node);
             answerButton.setAttribute('value', options);
             
             
@@ -106,3 +105,35 @@ startButtonEl.addEventListener('click', function () {
 
         });
           
+        function renderQuestion(){
+        node.addEventListener(function(){
+            generateQuestion(questionIndex++);
+
+        });
+
+    }
+
+    // ------------------------Validates answers--------------------------//
+    function validateAnswer(event) {
+       
+        var answerClicked = event.target.value;
+        var currentQuestion = questionsList[questionIndex];
+        var  correctSelection = currentQuestion.correctAnswer;
+        
+    
+            if (answerClicked === correctSelection) {
+             var  correctChoice = document.getElementById('AnswerSelect');
+             correctChoice.textContent = 'Correct!';
+             console.log(correctAnswer);
+            
+
+            } else {
+             var incorrectChoice = document.getElementById('AnswerSelect');
+             incorrectChoice.textContent = 'Incorrect';
+          
+             
+    }
+
+
+
+}
