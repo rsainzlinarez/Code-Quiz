@@ -8,12 +8,7 @@ correctAnswer: 'alerts',
 question: "The condition in an if/ese is enclosed within__________.",
 choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
 correctAnswer: 'curly brackets',
-    },
-       {
-question: "Arrays in JavaScript can be used to store __________.",
-choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-correctAnswer: 'all of the above',
-    },
+    }, 
        {
 question: "String values must be recorded within __________when being assigned to variables.",
 choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
@@ -24,6 +19,11 @@ question: "A very useful tool during development and debugging for printing cont
 choices: ['JavaScript', 'terminal/bash', 'for loops', 'console.log'],
 correctAnswer: 'console.log',
     },
+    {
+question: "Arrays in JavaScript can be used to store __________.",
+choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+correctAnswer: 'all of the above',
+            },
      
 ];
 
@@ -43,9 +43,9 @@ var instructionsEl = document.querySelector('#instructions');
 // ========================List of Global Variables==================//
 var timer = 60;
 var score = 0;
-var currentQuestion = '';
+// var currentQuestion = '';
 var questionIndex = 0;
-var generateQuestion = 0;
+
 
 
 
@@ -94,40 +94,9 @@ function generateNextQuestion(){
             validateAnswer(event);
     });
     });
-
-
-
 }
 
-
-// function generateQuestion(){
-//     var currentQuestion = questionsList[questionIndex];
-            
-//     titleEl.textContent = currentQuestion.question;
-            
-//     document.getElementById('choices').innerHTML = '';
-
-//     currentQuestion.choices.forEach(function(options) {
-//         console.log(options);
-//         var node = document.createElement('button');
-//         var textnode = document.createTextNode(options);
-//         node.appendChild(textnode);
-//         var answerButton = document.getElementById('choices').appendChild(node);
-//         answerButton.setAttribute('value', options);
-            
-            
-//     node.addEventListener('click', function(event) {
-//             validateAnswer(event);
-//     });
-//     });
-            
-// }
-           
-    
-
-    
-
-    // ------------------------Validates answers--------------------------//
+// ==================validates Answers===================================//
     function validateAnswer(event) {
        
         var answerClicked = event.target.value;
@@ -135,26 +104,26 @@ function generateNextQuestion(){
         var  correctSelection = currentQuestion.correctAnswer;
         
     
-            if (answerClicked === correctSelection) {
-             var  correctChoice = document.getElementById('AnswerSelect');
-             correctChoice.textContent = 'Correct!';
-             console.log(correctAnswer);
-             var addPoints = score += 10;
-             userScoreEl.textContent = 'Score: ' + addToUserScore;
-
-            } else {
-             var incorrectChoice = document.getElementById('AnswerSelect');
-             incorrectChoice.textContent = 'Incorrect';
-            //   addPoints = score -= 10;
+            // if (answerClicked === correctSelection) {
+            //  var  correctChoice = document.getElementById('AnswerSelect');
+            //  correctChoice.textContent = 'Correct!';
+            //  console.log(correctAnswer);
+            //  var addPoints = score += 10;
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
-            //  timeRemaining -= 10;      
+
+            // } else {
+            //  var incorrectChoice = document.getElementById('AnswerSelect');
+            //  incorrectChoice.textContent = 'Incorrect';
+            // //   addPoints = score -= 10;
+            // //  userScoreEl.textContent = 'Score: ' + addToUserScore;
+            // //  timeRemaining -= 10;      
              
-    }
+    // }
 
     setTimeout(function(){
-        generateQuestion(questionIndex++);
-        console.log(questionIndex++);
+        generateNextQuestion(questionIndex++);
         
-   }, 1000);
+        
+   }, 50);
 
 }
