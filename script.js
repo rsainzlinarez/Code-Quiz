@@ -45,6 +45,7 @@ var timer = 60;
 var score = 0;
 var currentQuestion = '';
 var questionIndex = 0;
+var generateQuestion = 0;
 
 
 
@@ -60,58 +61,71 @@ startButtonEl.addEventListener('click', function () {
         }
     
       }, 1000);
-    // nextQuestion();
+   
+    // -----Removes quiz title, instructions and start quiz------//
 
-    });
+    // Startbutton  and instructions disappears
+    startButtonEl.style.display = 'none';
+    instructionsEl.style.display = 'none';
     
-// -----Removes quiz title, instructions and start quiz-------------------//
-      startButtonEl.addEventListener('click', function(){
-        // titleEl.style.display = 'none';
-        // Startbutton disappears
-        startButtonEl.style.display = 'none';
+    generateNextQuestion();
+    });
+   
 
-        // Instructions disappear
-        instructionsEl.style.display = 'none';
-      
-
-        // Buttos that contain the answer choices appear
-        // answerButtonSDivEl.style.display = 'block'; 
- // ----------------------------------------------------------------------//
 
 // ==================Generates questioins and answer choices==============//
-    function generateQuestion(){
-            var currentQuestion = questionsList[questionIndex];
+function generateNextQuestion(){
+    var currentQuestion = questionsList[questionIndex];
             
-            titleEl.textContent = currentQuestion.question;
+    titleEl.textContent = currentQuestion.question;
             
-            document.getElementById('choices').innerHTML = '';
+    document.getElementById('choices').innerHTML = '';
 
-            currentQuestion.choices.forEach(function(options) {
-            console.log(options);
-            var node = document.createElement('button');
-            var textnode = document.createTextNode(options);
-            node.appendChild(textnode);
-            var answerButton = document.getElementById('choices').appendChild(node);
-            answerButton.setAttribute('value', options);
+    currentQuestion.choices.forEach(function(options) {
+        console.log(options);
+        var node = document.createElement('button');
+        var textnode = document.createTextNode(options);
+        node.appendChild(textnode);
+        var answerButton = document.getElementById('choices').appendChild(node);
+        answerButton.setAttribute('value', options);
             
             
-            node.addEventListener('click', function(event) {
+    node.addEventListener('click', function(event) {
             validateAnswer(event);
-            });
-            });
+    });
+    });
+
+
+
+}
+
+
+// function generateQuestion(){
+//     var currentQuestion = questionsList[questionIndex];
             
-            }
-            generateQuestion()
+//     titleEl.textContent = currentQuestion.question;
+            
+//     document.getElementById('choices').innerHTML = '';
 
-        });
-          
-        function renderQuestion(){
-        node.addEventListener(function(){
-            generateQuestion(questionIndex++);
+//     currentQuestion.choices.forEach(function(options) {
+//         console.log(options);
+//         var node = document.createElement('button');
+//         var textnode = document.createTextNode(options);
+//         node.appendChild(textnode);
+//         var answerButton = document.getElementById('choices').appendChild(node);
+//         answerButton.setAttribute('value', options);
+            
+            
+//     node.addEventListener('click', function(event) {
+//             validateAnswer(event);
+//     });
+//     });
+            
+// }
+           
+    
 
-        });
-
-    }
+    
 
     // ------------------------Validates answers--------------------------//
     function validateAnswer(event) {
@@ -125,15 +139,22 @@ startButtonEl.addEventListener('click', function () {
              var  correctChoice = document.getElementById('AnswerSelect');
              correctChoice.textContent = 'Correct!';
              console.log(correctAnswer);
-            
+             var addPoints = score += 10;
+             userScoreEl.textContent = 'Score: ' + addToUserScore;
 
             } else {
              var incorrectChoice = document.getElementById('AnswerSelect');
              incorrectChoice.textContent = 'Incorrect';
-          
+            //   addPoints = score -= 10;
+            //  userScoreEl.textContent = 'Score: ' + addToUserScore;
+            //  timeRemaining -= 10;      
              
     }
 
-
+    setTimeout(function(){
+        generateQuestion(questionIndex++);
+        console.log(questionIndex++);
+        
+   }, 1000);
 
 }
