@@ -107,14 +107,15 @@ function generateNextQuestion(){
             if (answerClicked === correctSelection) {
              var  correctChoice = document.getElementById('AnswerSelect');
              correctChoice.textContent = 'Correct!';
-            
+            //  var addPoints = score += 10;
+            //  userScoreEl.textContent = 'Score: ' + addToUserScore;
 
             } else {
              var incorrectChoice = document.getElementById('AnswerSelect');
              incorrectChoice.textContent = 'Incorrect';
             //   addPoints = score -= 10;
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
-            //  timeRemaining -= 10;      
+             timer -= 50;      
              
     }
 
@@ -122,6 +123,6 @@ function generateNextQuestion(){
         generateNextQuestion(questionIndex++);
         
         
-   }, 400);
+   }, 500);
 
 }
