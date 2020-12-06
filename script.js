@@ -104,26 +104,24 @@ function generateNextQuestion(){
         var  correctSelection = currentQuestion.correctAnswer;
         
     
-            // if (answerClicked === correctSelection) {
-            //  var  correctChoice = document.getElementById('AnswerSelect');
-            //  correctChoice.textContent = 'Correct!';
-            //  console.log(correctAnswer);
-            //  var addPoints = score += 10;
-            //  userScoreEl.textContent = 'Score: ' + addToUserScore;
+            if (answerClicked === correctSelection) {
+             var  correctChoice = document.getElementById('AnswerSelect');
+             correctChoice.textContent = 'Correct!';
+            
 
-            // } else {
-            //  var incorrectChoice = document.getElementById('AnswerSelect');
-            //  incorrectChoice.textContent = 'Incorrect';
-            // //   addPoints = score -= 10;
-            // //  userScoreEl.textContent = 'Score: ' + addToUserScore;
-            // //  timeRemaining -= 10;      
+            } else {
+             var incorrectChoice = document.getElementById('AnswerSelect');
+             incorrectChoice.textContent = 'Incorrect';
+            //   addPoints = score -= 10;
+            //  userScoreEl.textContent = 'Score: ' + addToUserScore;
+            //  timeRemaining -= 10;      
              
-    // }
+    }
 
     setTimeout(function(){
         generateNextQuestion(questionIndex++);
         
         
-   }, 50);
+   }, 400);
 
 }
