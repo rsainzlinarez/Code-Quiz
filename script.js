@@ -60,7 +60,7 @@ startButtonEl.addEventListener('click', function () {
         
         if (timer < 0) {
             clearInterval(timeInterval);
-            timerEl.textContent = "Time is up!"
+            // timerEl.textContent = "Time is up!"
             
           
         }
@@ -86,7 +86,7 @@ function generateNextQuestion(){
     var currentQuestion = questionsList[questionIndex];
     //After the last question if statement remove the question section
     //Make the End window score section appear
-    if (!currentQuestion) {
+    if (!currentQuestion || timer <= 0) {
         timer = 0;
         // Makes question disappear
         questionsSection.style.display = "none";
@@ -151,13 +151,43 @@ function generateNextQuestion(){
     
    }, 500);
  
-allDone();
-}
-
-function scoreSection(){
-
 
 }
-scoreSection();
-// ======================================================================//
+
+
+
+// ===============Save to Local Storage=======================================================//
+var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "initials");
+    createInput.textContent = "";
+
+    questionsDiv.appendChild(createInput);
+
+submitButton.addEventListener("click", function () {
+    // var initials = createInput.value;
+alert('hi');
+    if (initials === null) {
+
+        console.log("No value entered!");
+
+    } else {
+        var finalScore = {
+            initials: initials,
+            score: timeRemaining
+        }
+        console.log(finalScore);
+        var allScores = localStorage.getItem("allScores");
+        if (allScores === null) {
+            allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+        // Travels to final page
+        window.location.replace("./HighScores.html");
+    }
+});
 
