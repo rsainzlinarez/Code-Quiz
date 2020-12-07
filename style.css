@@ -1,9 +1,8 @@
 /* Modifies intitial window screen */
-#startWindow,
-#endWindow{
+#startWindow
+{
     width: 500px;
     height: 300px;
-   
     margin: auto;
     position: relative;
     margin-top: 10%;
@@ -11,7 +10,8 @@
 }
 
 /* Modifies title */
-#title{
+#title,
+#endWindow{
 
    margin: auto;
     width: 15em;
@@ -28,7 +28,8 @@ padding-bottom: 20px;
 }
 
 /* Modifies start button */
-#startButton{
+#startButton,
+#submitButton{
 background-color:rgb(13, 65, 236);
 color: white;
 position: relative;
@@ -84,4 +85,13 @@ position: relative;
 margin-top: 10%;
 }
 
-
+#submitButton{
+    background-color:rgb(13, 65, 236);
+    color: white;
+    position: relative;
+    margin: auto;
+    height: 3em;
+    width: 15em;
+    
+    
+    }
