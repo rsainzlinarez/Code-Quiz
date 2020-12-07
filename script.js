@@ -37,11 +37,9 @@ var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 
-
-
     
 // ========================List of Global Variables==================//
-var timer = 60;
+var timer = 5;
 var score = 0;
 // var currentQuestion = '';
 var questionIndex = 0;
@@ -56,10 +54,12 @@ startButtonEl.addEventListener('click', function () {
         timerEl.textContent = timer + " seconds remaining";
         timer--;
         
-        if (timer === -1) {
+        if (timer < 0) {
             clearInterval(timeInterval);
+            timerEl.textContent = "Time is up!"
+          
         }
-    
+        
       }, 1000);
    
     // -----Removes quiz title, instructions and start quiz------//
@@ -115,10 +115,10 @@ function generateNextQuestion(){
              incorrectChoice.textContent = 'Incorrect';
             //   addPoints = score -= 10;
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
-             timer -= 50;      
+             timer -= 5;      
              
     }
-
+// ------------------Moves to next question after designated time-----------//
     setTimeout(function(){
         generateNextQuestion(questionIndex++);
         
@@ -126,3 +126,6 @@ function generateNextQuestion(){
    }, 500);
 
 }
+
+
+
