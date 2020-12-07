@@ -38,11 +38,12 @@ var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 var scoreSectionEl = document.querySelector('#endWindow');
 var scoreEl = document.querySelector('#score');
+var finalScoreEl = document.querySelector('.finalScore');
 
     
 // ========================List of Global Variables==================//
 var timer = 60;
-score = 0;
+var score = 0;
 // var currentQuestion = '';
 var questionIndex = 0;
 
@@ -91,6 +92,10 @@ function generateNextQuestion(){
         questionsSection.style.display = "none";
         // Makes score section appear
       scoreSectionEl.style.display = "block";
+
+      scoreEl.style.display = "none";
+
+      finalScoreEl.textContent= "Your Final Score is:   " + score;
 
     }
     
@@ -149,6 +154,10 @@ function generateNextQuestion(){
 allDone();
 }
 
+function scoreSection(){
 
+
+}
+scoreSection();
 // ======================================================================//
 
