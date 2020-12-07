@@ -36,13 +36,15 @@ var startButtonEl = document.querySelector('#startButton');
 var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
+var scoreSectionEl = document.querySelector('#endWindow');
 
     
 // ========================List of Global Variables==================//
-var timer = 5;
+var timer = 60;
 var score = 0;
 // var currentQuestion = '';
 var questionIndex = 0;
+
 
 
 
@@ -57,6 +59,7 @@ startButtonEl.addEventListener('click', function () {
         if (timer < 0) {
             clearInterval(timeInterval);
             timerEl.textContent = "Time is up!"
+            
           
         }
         
@@ -75,7 +78,19 @@ startButtonEl.addEventListener('click', function () {
 
 // ==================Generates questioins and answer choices==============//
 function generateNextQuestion(){
+   
+   
+   
     var currentQuestion = questionsList[questionIndex];
+    if (!currentQuestion) {
+        timer = 0;
+        // Makes question disappear
+        questionsSection.style.display = "none";
+        // Makes score section appear
+      scoreSectionEl.style.display = "block";
+
+    }
+    
             
     titleEl.textContent = currentQuestion.question;
             
@@ -92,8 +107,11 @@ function generateNextQuestion(){
             
     node.addEventListener('click', function(event) {
             validateAnswer(event);
+            
     });
     });
+
+   
 }
 
 // ==================validates Answers===================================//
@@ -116,16 +134,17 @@ function generateNextQuestion(){
             //   addPoints = score -= 10;
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
              timer -= 5;      
-             
+            
     }
 // ------------------Moves to next question after designated time-----------//
     setTimeout(function(){
-        generateNextQuestion(questionIndex++);
-        
-        
+     generateNextQuestion(questionIndex++); 
+    
    }, 500);
-
+ 
+allDone();
 }
 
 
+// ======================================================================//
 

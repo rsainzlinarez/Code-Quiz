@@ -1,5 +1,6 @@
 /* Modifies intitial window screen */
-#startWindow{
+#startWindow,
+#endWindow{
     width: 500px;
     height: 300px;
    
@@ -73,6 +74,14 @@ margin-left: 33%;
     display: none;
    
 
+}
+#endWindow{
+display: none;
+width: 500px;
+height: 300px;
+margin: auto;
+position: relative;
+margin-top: 10%;
 }
 
 
