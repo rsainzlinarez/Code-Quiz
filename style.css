@@ -39,10 +39,20 @@ text-align: center;
 
 }
 /* Modifies start button */
+#score{
+    display: inline;
+    position: absolute;
+    margin-left: 40%;
+    font-size: 20px;
+
+    
+    }
 #timer{
 display: inline;
 position: absolute;
 margin-left: 85%;
+font-size: 20px;
+
 }
 
 .choiceA{
