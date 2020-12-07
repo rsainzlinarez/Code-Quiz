@@ -33,15 +33,16 @@ var i = 0;
 var questionsSection = document.querySelector('#startWindow');
 var timerEl = document.querySelector('#timer');
 var startButtonEl = document.querySelector('#startButton');
-var scoreRecordedEl = document.querySelector('#scoresLink');
+// var scoreRecordedEl = document.querySelector('#scoresLink');
 var titleEl = document.querySelector('#title');
 var instructionsEl = document.querySelector('#instructions');
 var scoreSectionEl = document.querySelector('#endWindow');
+var scoreEl = document.querySelector('#score');
 
     
 // ========================List of Global Variables==================//
 var timer = 60;
-var score = 0;
+score = 0;
 // var currentQuestion = '';
 var questionIndex = 0;
 
@@ -82,6 +83,8 @@ function generateNextQuestion(){
    
    
     var currentQuestion = questionsList[questionIndex];
+    //After the last question if statement remove the question section
+    //Make the End window score section appear
     if (!currentQuestion) {
         timer = 0;
         // Makes question disappear
@@ -125,13 +128,14 @@ function generateNextQuestion(){
             if (answerClicked === correctSelection) {
              var  correctChoice = document.getElementById('AnswerSelect');
              correctChoice.textContent = 'Correct!';
-            //  var addPoints = score += 10;
+             scoreEl.textContent= "Score:   " + (score += 10);
+             console.log(scoreEl);
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
 
             } else {
              var incorrectChoice = document.getElementById('AnswerSelect');
              incorrectChoice.textContent = 'Incorrect';
-            //   addPoints = score -= 10;
+             scoreEl.textContent= "Score:   " + (score -= 5);
             //  userScoreEl.textContent = 'Score: ' + addToUserScore;
              timer -= 5;      
             
