@@ -1,4 +1,13 @@
 /* Modifies intitial window screen */
+
+body{
+background-image: url(.//assets/techBackground.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+color:white;
+
+}
 #startWindow
 {
     width: 500px;
