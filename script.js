@@ -39,6 +39,9 @@ var instructionsEl = document.querySelector('#instructions');
 var scoreSectionEl = document.querySelector('#endWindow');
 var scoreEl = document.querySelector('#score');
 var finalScoreEl = document.querySelector('.finalScore');
+var recordInitialsEl = document.querySelector('.recordInitials');
+var submitButtonEl = document.querySelector('.submitButton');
+var inputInitialsEl = document.querySelector('.inputInitials');
 
     
 // ========================List of Global Variables==================//
@@ -157,37 +160,18 @@ function generateNextQuestion(){
 
 
 // ===============Save to Local Storage=======================================================//
-var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
+// var createInput = document.createElement("input");
+//     createInput.setAttribute("type", "text");
+//     createInput.setAttribute("id", "initials");
+//     createInput.textContent = "";
 
-    questionsDiv.appendChild(createInput);
+//     questionsDiv.appendChild(createInput);
 
-submitButton.addEventListener("click", function () {
-    // var initials = createInput.value;
+submitButtonEl.addEventListener('click', function () {
 alert('hi');
-    if (initials === null) {
+var test = inputInitialsEl;
 
-        console.log("No value entered!");
-
-    } else {
-        var finalScore = {
-            initials: initials,
-            score: timeRemaining
-        }
-        console.log(finalScore);
-        var allScores = localStorage.getItem("allScores");
-        if (allScores === null) {
-            allScores = [];
-        } else {
-            allScores = JSON.parse(allScores);
-        }
-        allScores.push(finalScore);
-        var newScore = JSON.stringify(allScores);
-        localStorage.setItem("allScores", newScore);
-        // Travels to final page
-        window.location.replace("./HighScores.html");
-    }
+alert()
+localStorage.setItem(test, score);
 });
 

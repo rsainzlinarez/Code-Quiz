@@ -37,8 +37,7 @@ padding-bottom: 20px;
 }
 
 /* Modifies start button */
-#startButton,
-#submitButton{
+#startButton{
 background-color:rgb(13, 65, 236);
 color: white;
 position: relative;
@@ -94,7 +93,7 @@ position: relative;
 margin-top: 10%;
 }
 
-#submitButton{
+.submitButton{
     background-color:rgb(13, 65, 236);
     color: white;
     position: relative;
